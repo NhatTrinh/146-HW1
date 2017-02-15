@@ -1,40 +1,52 @@
 
 package pkg146.hw1;
 
-import java.util.LinkedList;
+import java.util.Iterator;
 
-public class Queue<E> {
+public class Queue<E>{
     
-    Node<E> last;
+    Node last;
+    protected int size = 0;
     
     public Queue(){
-        LinkedList <E> Queue = new LinkedList<>();
-        Node <E> first = new Node<>();
-        Node <E> last = new Node<>();
+        Node last = new Node();
         
-        
+        last.next = last;
     }
+        
     
-    public static class Node<E>{
+    
+    public class Node{
         E data;
         Node next;
-        Node previous;
-    }
-    
-    public static void enqueue(){
         
-    }
-    
-    public static Node dequeue(){
+        public Node(){data=null; next=null;}
         
+        public Node(E data){this.data=data;}
     }
     
+    public boolean isEmpty(){return size == 0;}
     
-    public static void setNext(Node current, Node arg){current.next = arg;}
+    public int size(){return size;}
     
-    public static Node getNext(Node arg){return arg.next;}
+    public void enqueue(E data){
+        Node newNode = new Node(data);
+        
+        if (isEmpty()){last.next = newNode; size++;}
+        else{
+            last.next = newNode;
+            newNode.next = last;
+            size++;
+        }
+    }
     
-    public static Node getPrevious(Node arg){return arg.previous;}
-    
-    public static void setPrevious(Node current, Node arg){current.previous = arg;}
+    public E dequeue(){
+        E data =  last.next.data;
+        last.next = last.next.next;
+        
+        if (last.next == last){last = null;}
+        
+        size--;
+        return data;
+    }
 }
