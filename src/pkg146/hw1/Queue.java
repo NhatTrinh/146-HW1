@@ -10,11 +10,8 @@ public class Queue<E>{
     
     public Queue(){
         Node last = new Node();
-        
         last.next = last;
     }
-        
-    
     
     public class Node{
         E data;
@@ -49,4 +46,6 @@ public class Queue<E>{
         size--;
         return data;
     }
+    
+    
 }

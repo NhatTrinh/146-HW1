@@ -9,16 +9,16 @@ import java.util.Scanner;
 
 public class Parentheses {
     
-    static Stack<Character> stack = new Stack<>();
-    static Scanner in = new Scanner(System.in);
+    Stack<Character> stack = new Stack<>();
+    Scanner in = new Scanner(System.in);
     
-    public static boolean isBeginning(char arg){
+    public boolean isBeginning(char arg){
         if (arg == '<' || arg == '{' || arg == '[' || arg == '(')
             return true;
         return false;
     }
     
-    public static Character getOpposite(char arg){
+    public Character getOpposite(char arg){
         char oppositeChar = ' ';
         switch(arg){
             case '>':
@@ -37,13 +37,13 @@ public class Parentheses {
         return oppositeChar;
     }
     
-    public static String readInput() {
+    public String readInput() {
         System.out.println("Enter parentheses: ");
         String input = in.next();
         return input;
     }
 
-    public static boolean evaluate(String input){
+    public boolean evaluate(String input){
         char top;
         char current;
         
@@ -63,7 +63,7 @@ public class Parentheses {
         }
         return true;
     }
-    
+    /*
     public static void main (String args[]){
         String input = readInput();
         if (evaluate(input) == false)
@@ -71,6 +71,6 @@ public class Parentheses {
         else
             System.out.println("True");
     }
-
+    */
 
 }

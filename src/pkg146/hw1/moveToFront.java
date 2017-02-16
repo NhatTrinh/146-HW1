@@ -20,52 +20,45 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class moveToFront {
+public class MoveToFront {
+    private Scanner in = new Scanner(System.in);
     
-    LinkedList myLL;
-    HashMap myHM;
-    Scanner in = new Scanner(System.in);
-    
-    public moveToFront(){
-        myLL = new LinkedList();
-        myHM = new HashMap();
-    }
-    
-    
-    public static void readInput(){
+    public LinkedList readInput(){
+        LinkedList myLL = new LinkedList();
+        
         System.out.println("Enter a sequence of characters: ");
         String input = in.next();
         char current;
         
         for (int i = 0; i < input.length();i++){
             current = input.charAt(i);
-            if (!myHM.containsKey(current)) {
-                myHM.put(current,true);
-                myLL.add(current);
-            }
-            else{
-                myLL.remove(current);
+            if (myLL.contains(current) == true && myLL.isEmpty() == false){
+                myLL.removeFirstOccurrence(current);
                 myLL.addFirst(current);
             }
+            else
+                myLL.addLast(current);
         }
+        return myLL;
     }
     
-    public static void print(){
+    public void print(LinkedList myLL){
         Iterator myIter = myLL.iterator();
+        
         while (myIter.hasNext()){
-            System.out.println(myIter.next());
+            System.out.print(myIter.next() + " ");
         }
+        System.out.print("\n");
     }
-        
-        public static void main (String [] args){
-            readInput();
-            print();
-            
-        
-            
-        }
+    /*
+    public static void main (String [] args){
+        MoveToFront myMTF = new MoveToFront();
+        LinkedList myLL = myMTF.readInput();
+        myMTF.print(myLL);
     }
-    
-    
-    
+    */
 }
+    
+    
+    
+
