@@ -22,9 +22,8 @@ public class Queue2S <E> {
         E data;
         
         if (stack2.isEmpty()){
-            if(!stack1.isEmpty()){
+            if(!stack1.isEmpty())
                 stack2.push(stack1.pop());
-            }
         }
         
         data = stack2.pop();

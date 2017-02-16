@@ -4,10 +4,18 @@ You may assume that you can sort the n integers in time proportional to n^2 or b
  */
 package pkg146.hw1;
 
+import java.util.HashMap;
+import java.util.Arrays;
+
 /**
  *
  * @author Nhat
  */
-public class ThreeSum {
+public class ThreeSum <K,V>{
+    private HashMap <K,V> myHM = new HashMap <> ();
+    Arrays my
+    
+    
+    
     
 }
