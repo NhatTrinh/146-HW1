@@ -1,4 +1,3 @@
-package pkg146.hw1;
 
 import java.util.Stack;
 import java.util.Scanner;

@@ -1,4 +1,3 @@
-package pkg146.hw1;
 
 public class Queue<E>{
 
@@ -25,30 +24,46 @@ public class Queue<E>{
 
     public void enqueue(E data){
         Node newNode = new Node(data);
-
-        if (last.next == last){last.next = newNode; size++;}
-        else{
-            last.next = newNode;
-            newNode.next = last;
-            size++;
+        
+        if (last == null){
+            last = newNode;
+            last.next = last;
         }
+        else{
+            newNode.next = last.next;
+            last.next = newNode;
+            last = newNode;
+        }
+        size++;
     }
 
     public E dequeue(){
+        
+        if (isEmpty())
+            return null;
+        
         E data =  last.next.data;
-        last.next = last.next.next;
-
-        if (last.next == last){last = null;}
-
+        
+        if (last == last.next){ last = null; }
+        else{ last.next = last.next.next; }
         size--;
+        
         return data;
     }
     
+    /* MAIN METHOD
     public static void main (String [] args){
         Queue myQ = new Queue();
         myQ.enqueue(5);
         myQ.enqueue(7);
         System.out.println(myQ.dequeue() + " " + myQ.dequeue());
     }
+    */
+    /* INPUT
+        5 7
+    */
+    /* OUTPUT
+        5 7
+    */
 }
 

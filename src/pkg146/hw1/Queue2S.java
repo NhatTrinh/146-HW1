@@ -1,7 +1,5 @@
-package pkg146.hw1;
 
 import java.util.Stack;
-
 
 public class Queue2S <E> {
     private Stack <E> stack1 = new Stack <> ();
