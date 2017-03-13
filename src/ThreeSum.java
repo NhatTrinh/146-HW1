@@ -34,7 +34,6 @@ public class ThreeSum <K,V>{
     public static void main(String [] args){
         ThreeSum myTS = new ThreeSum();
         myTS.find3S();
-        System.out.println("F");
     }
     */
     /* INPUT
