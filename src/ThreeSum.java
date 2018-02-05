@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Arrays;
 
 public class ThreeSum <K,V>{
-    private HashMap <Integer,int[]> myHM = new HashMap<>();
+    private HashMap <Integer,int[]> myHM = new HashMap<Integer,int[]>();
     private int [] myArr = {-3,-2,-1,0,1,2,2};
 
     public void find3S(){
